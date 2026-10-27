@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    /* MENGUBAH WARNA DASAR MENJADI BIRU DONGKER */
+    @apply bg-indigo-950 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900;
+  }
+}
+
+/* MENYESUAIKAN WARNA ANIMASI AURORA */
+.aurora-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* Gradasi diubah menjadi nuansa biru tua dan indigo */
+  background: radial-gradient(ellipse at top, #1e40af, transparent), radial-gradient(ellipse at bottom, #3730a3, transparent);
+  animation: aurora-animation 12s ease-in-out infinite alternate;
+  background-size: 200% 200%;
+}
+
+@keyframes aurora-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}

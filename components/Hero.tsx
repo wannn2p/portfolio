@@ -2,33 +2,42 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen bg-[#0a0a0a] flex flex-col justify-center px-6 md:px-16 pt-20 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-[#0a0a0a] flex flex-col justify-center px-6 md:px-16 pt-24 pb-16 md:pb-24 overflow-hidden">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* --- left side: teks --- */}
         <div className="z-10 order-2 lg:order-1">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="text-[12vw] lg:text-[7vw] font-medium leading-[0.9] tracking-tighter text-white">
-              Frontend <br />
+              Web <br />
               <span className="text-gray-500">Developer.</span>
             </h1>
           </motion.div>
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mt-8 text-gray-400 text-lg md:text-xl max-w-md leading-relaxed">
-            A Frontend enthusiast exploring modern web development. Passionate about building functional interfaces with <span className="text-white font-medium">Next.js & Tailwind CSS</span>.
+            I build web applications with a focus on{" "}
+            <span className="text-white font-medium">responsive frontend interfaces</span>{" "}
+            and API integration. Recently shipped an academic module integrated into a live university system as my undergraduate thesis.
           </motion.p>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="mt-12">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="mt-12 flex flex-wrap items-center gap-6">
             <Link href="#work" className="inline-flex items-center gap-4 text-gray-500 uppercase text-xs tracking-[0.2em] group cursor-pointer hover:text-white transition-colors">
               <div className="p-3 border border-white/20 rounded-full animate-bounce group-hover:border-white transition-colors">
                 <ArrowDown size={16} />
               </div>
               <span>See My Projects</span>
             </Link>
+            
+            <a href="/CV_Muhammad_Ridwan.pdf" download className="inline-flex items-center gap-4 text-gray-500 uppercase text-xs tracking-[0.2em] group cursor-pointer hover:text-white transition-colors">
+              <div className="p-3 border border-white/20 rounded-full group-hover:border-white transition-colors">
+                <Download size={16} />
+              </div>
+              <span>Download CV</span>
+            </a>
           </motion.div>
         </div>
 
@@ -37,7 +46,7 @@ export default function Hero() {
           <div className="relative w-full h-full">
             <Image
               src="/profile.png"
-              alt="Profile"
+              alt="Portrait of Muhammad Ridwan"
               fill
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -58,7 +67,7 @@ export default function Hero() {
 
       {/* --- background text --- */}
       <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }} className="absolute bottom-10 left-0 hidden lg:block pointer-events-none">
-        <span className="text-white/3 text-[15vw] font-bold select-none leading-none">PORTFOLIO</span>
+        <span className="text-white/6 text-[15vw] font-bold select-none leading-none">PORTFOLIO</span>
       </motion.div>
     </section>
   );

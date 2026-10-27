@@ -1,29 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Github, Linkedin, Instagram, ArrowUp, Copy, Check } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [time, setTime] = useState<string>("");
   const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const timeString = now.toLocaleTimeString("en-US", {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-        timeZone: "Asia/Jakarta",
-      });
-      setTime(timeString);
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("wannn2p@gmail.com");
@@ -66,7 +49,7 @@ export default function Footer() {
           <div className="lg:col-span-5 flex flex-col justify-between lg:items-end gap-10">
             <div className="flex flex-col lg:items-end gap-4">
               <span className="text-gray-500 uppercase tracking-widest text-xs mb-2">Menu</span>
-              {["Home", "Services", "Work", "About"].map((item) => (
+              {["Home", "Work", "About"].map((item) => (
                 <Link key={item} href={item === "Home" ? "/" : `#${item.toLowerCase()}`} className="text-2xl md:text-3xl font-medium text-gray-400 hover:text-white transition-colors tracking-tight">
                   {item}
                 </Link>
@@ -75,13 +58,13 @@ export default function Footer() {
 
             {/* --- socials --- */}
             <div className="flex gap-4">
-              <a href="https://github.com/wannn2p" target="_blank" className="p-4 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
+              <a href="https://github.com/wannn2p" target="_blank" rel="noopener noreferrer" className="p-4 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com/in/wannn2p" target="_blank" className="p-4 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
+              <a href="https://linkedin.com/in/wannn2p" target="_blank" rel="noopener noreferrer" className="p-4 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
                 <Linkedin size={20} />
               </a>
-              <a href="https://instagram.com/wannn2.p" target="_blank" className="p-4 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
+              <a href="https://instagram.com/wannn2.p" target="_blank" rel="noopener noreferrer" className="p-4 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
                 <Instagram size={20} />
               </a>
             </div>
@@ -95,10 +78,10 @@ export default function Footer() {
             <span className="hidden md:block w-1 h-1 bg-gray-700 rounded-full"></span>
             <p className="flex items-center gap-2">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              Local time: <span className="text-gray-300 font-mono">{time} WIB</span>
+              <span className="text-gray-400 text-xs font-mono">Available for Work · Bogor, ID</span>
             </p>
           </div>
 

@@ -8,9 +8,9 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const navLinks = [
-    { name: "Services", href: "#services" },
     { name: "Work", href: "#work" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#footer" },
@@ -24,6 +24,26 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const sections = ["work", "about", "footer"];
+    const observers: IntersectionObserver[] = [];
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { threshold: 0.3 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
   return (
     <>
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-16 py-6 ${isScrolled ? "bg-[#0a0a0a]/80 backdrop-blur-md py-4 border-b border-white/10" : "bg-transparent"}`}>
@@ -33,13 +53,29 @@ export default function Navbar() {
             Muhammad Ridwan<span className="text-gray-500">.</span>
           </Link>
 
-          {/* --- dekstop menu --- */}
+          {/* --- desktop menu --- */}
           <div className="hidden md:flex items-center gap-10">
-            {navLinks.map((item) => (
-              <Link key={item.name} href={item.href} className="text-sm uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
-                {item.name}
-              </Link>
-            ))}
+            {navLinks.map((item) => {
+              const sectionId = item.href.replace("#", "");
+              const isActive = activeSection === sectionId;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`text-sm uppercase tracking-widest transition-colors relative pb-0.5 ${
+                    isActive ? "text-white" : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  {item.name}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-underline"
+                      className="absolute bottom-0 left-0 w-full h-px bg-white"
+                    />
+                  )}
+                </Link>
+              );
+            })}
 
             <Link href="#footer" className="bg-white text-black px-6 py-2 rounded-full text-sm font-bold hover:bg-gray-200 transition-all cursor-pointer">
               LET&apos;S TALK
