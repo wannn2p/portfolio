@@ -262,7 +262,7 @@ export default function Projects() {
                         </a>
                       ) : (
                         <span className="text-gray-400 text-xs italic">
-                          Repository will be available soon.
+                           Source code is private (university system).
                         </span>
                       )}
                     </div>

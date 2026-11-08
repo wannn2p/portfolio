@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Github, Linkedin, Instagram, ArrowUp, Copy, Check } from "lucide-react";
+import { Github, Linkedin, ArrowUp, Copy, Check } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -63,9 +63,6 @@ export default function Footer() {
               </a>
               <a href="https://linkedin.com/in/wannn2p" target="_blank" rel="noopener noreferrer" className="p-4 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
                 <Linkedin size={20} />
-              </a>
-              <a href="https://instagram.com/wannn2.p" target="_blank" rel="noopener noreferrer" className="p-4 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
-                <Instagram size={20} />
               </a>
             </div>
           </div>

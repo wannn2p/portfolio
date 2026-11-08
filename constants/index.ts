@@ -3,8 +3,8 @@ export const PROJECTS = [
     id: 1,
     title: "Student Academic Request Module - UCL System",
     badge: "Undergraduate Thesis",
-    tech: ["Next.js", "Express.js", "Sequelize", "PostgreSQL"],
-    role: "Role: Frontend-focused developer (independent thesis project).",
+    tech: ["Next.js", "Express.js", "Sequelize", "PostgreSQL", "Tailwind CSS"],
+    role: "Role: Full-stack developer (individual thesis project), strongest on the front end.",
     problem: "Previously, leave-of-absence and withdrawal requests were handled on paper — students filled out printed forms and staff routed them manually through each approving officer. After mapping this workflow through interviews, two separate approval flows were implemented in the existing UCL system, one for each request type.",
     description: "A module for submitting leave-of-absence and withdrawal letters, built and integrated into the existing UCL academic system.",
     features: [

@@ -89,7 +89,7 @@ export default function About() {
                 Education
               </span>
               <h4 className="text-lg md:text-xl font-semibold text-white mt-2">
-                Informatics Engineering · S.T.
+                Informatics Engineering
               </h4>
               <p className="text-gray-400 text-sm mt-1">
                 Universitas Ibn Khaldun Bogor
@@ -131,11 +131,11 @@ export default function About() {
                   Technical Stack
                 </span>
                 <h4 className="text-base font-semibold text-white mt-0.5">
-                  Technologies Applied in Real Production Workflows
+                  Tech Stack
                 </h4>
               </div>
               <span className="text-xs font-mono text-gray-500">
-                Hands-on Production & Thesis Verified
+                Used across the UCL thesis module and the FTS e-office internship.
               </span>
             </div>
 
@@ -144,10 +144,10 @@ export default function About() {
               {/* Frontend */}
               <div>
                 <span className="text-[11px] font-mono uppercase tracking-wider text-gray-400 block mb-2.5">
-                  // Frontend & UI
+                  // Frontend
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Bootstrap"].map((t) => (
+                  {["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Bootstrap", "HTML", "CSS", "JavaScript"].map((t) => (
                     <span
                       key={t}
                       className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/15 text-gray-200 hover:border-white/40 hover:bg-white/10 transition-all"
@@ -161,10 +161,10 @@ export default function About() {
               {/* Backend & API */}
               <div>
                 <span className="text-[11px] font-mono uppercase tracking-wider text-gray-400 block mb-2.5">
-                  // Backend & Systems
+                  // Integration & Tools
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {["Node.js", "Express.js", "Nest.js", "REST API"].map((t) => (
+                  {["REST API", "Git", "GitHub"].map((t) => (
                     <span
                       key={t}
                       className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/15 text-gray-200 hover:border-white/40 hover:bg-white/10 transition-all"
@@ -178,10 +178,10 @@ export default function About() {
               {/* Database & Tooling */}
               <div>
                 <span className="text-[11px] font-mono uppercase tracking-wider text-gray-400 block mb-2.5">
-                  // Database & Workflow
+                  // Backend (working knowledge)
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {["PostgreSQL", "Sequelize ORM", "Git", "GitHub"].map((t) => (
+                  {["Node.js", "Express.js", "Nest.js", "Sequelize", "PostgreSQL"].map((t) => (
                     <span
                       key={t}
                       className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/15 text-gray-200 hover:border-white/40 hover:bg-white/10 transition-all"

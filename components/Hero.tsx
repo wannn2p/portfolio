@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="z-10 order-2 lg:order-1">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="text-[12vw] lg:text-[7vw] font-medium leading-[0.9] tracking-tighter text-white">
-              Web <br />
+              Front-End <br />
               <span className="text-gray-500">Developer.</span>
             </h1>
           </motion.div>
